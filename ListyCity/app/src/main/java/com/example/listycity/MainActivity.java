@@ -23,13 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         cityList = findViewById(R.id.city_list);
-        Button btnAdd = findViewById(R.id.btnAdd);
-        Button btnDelete = findViewById(R.id.btnDelete);
+        Button btn_add = findViewById(R.id.btn_add);
+        Button btn_delete = findViewById(R.id.btn_delete);
 
         String []cities = {"Edmonton", "Vancouver", "Moscow", "Sydney", "Berlin", "Vienna", "Tokyo", "Beijing", "Osaka", "New Delhi"};
         dataList = new ArrayList<>(Arrays.asList(cities));
 
-        // Use the content layout provided in the files
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
 
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // ADD CITY logic
-        btnAdd.setOnClickListener(v -> {
+        btn_add.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Add New City");
             final EditText input = new EditText(this);
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // DELETE CITY logic
-        btnDelete.setOnClickListener(v -> {
+        btn_delete.setOnClickListener(v -> {
             if (selectedPosition != -1) {
                 dataList.remove(selectedPosition);
                 cityAdapter.notifyDataSetChanged(); // Refresh UI
