@@ -7,7 +7,7 @@
 
 ## References and Resources
 
-stackoverflow.com
+N/A
 
 ## Verbal Collaboration
 
